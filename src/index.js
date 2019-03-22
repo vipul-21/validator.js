@@ -10,12 +10,13 @@ import isEmail from './lib/isEmail';
 import isURL from './lib/isURL';
 import isMACAddress from './lib/isMACAddress';
 import isIP from './lib/isIP';
+import isIPRange from './lib/isIPRange';
 import isFQDN from './lib/isFQDN';
 
 import isBoolean from './lib/isBoolean';
 
-import isAlpha from './lib/isAlpha';
-import isAlphanumeric from './lib/isAlphanumeric';
+import isAlpha, { locales as isAlphaLocales } from './lib/isAlpha';
+import isAlphanumeric, { locales as isAlphanumericLocales } from './lib/isAlphanumeric';
 import isNumeric from './lib/isNumeric';
 import isPort from './lib/isPort';
 import isLowercase from './lib/isLowercase';
@@ -29,7 +30,7 @@ import isMultibyte from './lib/isMultibyte';
 import isSurrogatePair from './lib/isSurrogatePair';
 
 import isInt from './lib/isInt';
-import isFloat from './lib/isFloat';
+import isFloat, { locales as isFloatLocales } from './lib/isFloat';
 import isDecimal from './lib/isDecimal';
 import isHexadecimal from './lib/isHexadecimal';
 import isDivisibleBy from './lib/isDivisibleBy';
@@ -40,6 +41,7 @@ import isISRC from './lib/isISRC';
 
 import isMD5 from './lib/isMD5';
 import isHash from './lib/isHash';
+import isJWT from './lib/isJWT';
 
 import isJSON from './lib/isJSON';
 import isEmpty from './lib/isEmpty';
@@ -56,12 +58,13 @@ import isBefore from './lib/isBefore';
 import isIn from './lib/isIn';
 
 import isCreditCard from './lib/isCreditCard';
+import isIdentityCard from './lib/isIdentityCard';
 
 import isISIN from './lib/isISIN';
 import isISBN from './lib/isISBN';
 import isISSN from './lib/isISSN';
 
-import isMobilePhone from './lib/isMobilePhone';
+import isMobilePhone, { locales as isMobilePhoneLocales } from './lib/isMobilePhone';
 
 import isCurrency from './lib/isCurrency';
 
@@ -72,6 +75,8 @@ import isISO31661Alpha3 from './lib/isISO31661Alpha3';
 
 import isBase64 from './lib/isBase64';
 import isDataURI from './lib/isDataURI';
+import isMagnetURI from './lib/isMagnetURI';
+
 import isMimeType from './lib/isMimeType';
 
 import isLatLong from './lib/isLatLong';
@@ -91,7 +96,7 @@ import normalizeEmail from './lib/normalizeEmail';
 
 import toString from './lib/util/toString';
 
-const version = '10.3.0';
+const version = '10.11.0';
 
 const validator = {
   version,
@@ -106,10 +111,13 @@ const validator = {
   isURL,
   isMACAddress,
   isIP,
+  isIPRange,
   isFQDN,
   isBoolean,
   isAlpha,
+  isAlphaLocales,
   isAlphanumeric,
+  isAlphanumericLocales,
   isNumeric,
   isPort,
   isLowercase,
@@ -122,6 +130,7 @@ const validator = {
   isSurrogatePair,
   isInt,
   isFloat,
+  isFloatLocales,
   isDecimal,
   isHexadecimal,
   isDivisibleBy,
@@ -129,6 +138,7 @@ const validator = {
   isISRC,
   isMD5,
   isHash,
+  isJWT,
   isJSON,
   isEmpty,
   isLength,
@@ -139,10 +149,12 @@ const validator = {
   isBefore,
   isIn,
   isCreditCard,
+  isIdentityCard,
   isISIN,
   isISBN,
   isISSN,
   isMobilePhone,
+  isMobilePhoneLocales,
   isPostalCode,
   isPostalCodeLocales,
   isCurrency,
@@ -152,6 +164,7 @@ const validator = {
   isISO31661Alpha3,
   isBase64,
   isDataURI,
+  isMagnetURI,
   isMimeType,
   isLatLong,
   ltrim,

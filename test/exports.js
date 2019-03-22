@@ -1,6 +1,10 @@
-let assert = require('assert');
-let validator = require('../index');
-let isPostalCodeLocales = require('../lib/isPostalCode').locales;
+import assert from 'assert';
+import validator from '../index';
+import { locales as isPostalCodeLocales } from '../lib/isPostalCode';
+import { locales as isAlphaLocales } from '../lib/isAlpha';
+import { locales as isAlphanumericLocales } from '../lib/isAlphanumeric';
+import { locales as isMobilePhoneLocales } from '../lib/isMobilePhone';
+import { locales as isFloatLocales } from '../lib/isFloat';
 
 describe('Exports', () => {
   it('should export validators', () => {
@@ -25,5 +29,25 @@ describe('Exports', () => {
   it('should export isPostalCode\'s supported locales', () => {
     assert.ok(isPostalCodeLocales instanceof Array);
     assert.ok(validator.isPostalCodeLocales instanceof Array);
+  });
+
+  it('should export isAlpha\'s supported locales', () => {
+    assert.ok(isAlphaLocales instanceof Array);
+    assert.ok(validator.isAlphaLocales instanceof Array);
+  });
+
+  it('should export isAlphanumeric\'s supported locales', () => {
+    assert.ok(isAlphanumericLocales instanceof Array);
+    assert.ok(validator.isAlphanumericLocales instanceof Array);
+  });
+
+  it('should export isMobilePhone\'s supported locales', () => {
+    assert.ok(isMobilePhoneLocales instanceof Array);
+    assert.ok(validator.isMobilePhoneLocales instanceof Array);
+  });
+
+  it('should export isFloat\'s supported locales', () => {
+    assert.ok(isFloatLocales instanceof Array);
+    assert.ok(validator.isFloatLocales instanceof Array);
   });
 });
